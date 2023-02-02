@@ -1,0 +1,53 @@
+﻿<Window x:Class="ChooseAHusband.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChooseAHusband"
+        mc:Ignorable="d"
+        Title="Choose your type" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="Button_1"
+                Click="Button_1_Click"
+                Grid.Column="0"
+                Height="300"
+                Width="300">
+           <!-- <Image x:Name="Image_1"
+                   />
+            
+            -->
+
+            <TextBlock x:Name="TextBlock_1"
+                       Width="200"
+                       Height="30"/>
+        </Button>
+
+
+        <TextBlock Name="ImagesLeft_TextBlock"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Height="40"
+                   Width="100"
+                   Grid.Column="1"/>
+
+        <Button Name="Button_2"
+                Click="Button_2_Click"
+                Grid.Column="1"
+                Height="300"
+                Width="300">
+            <!--<Image x:Name="Image_2"/>-->
+
+
+            <TextBlock x:Name="TextBlock_2"
+                       Width="200"
+                       Height="30"/>
+            
+        </Button>
+        
+    </Grid>
+</Window>
