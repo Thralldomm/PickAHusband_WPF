@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="images\err.jpg\**" />
+    <EmbeddedResource Remove="images\err.jpg\**" />
+    <None Remove="images\err.jpg\**" />
+    <Page Remove="images\err.jpg\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="images\error.jpg" />
     <None Remove="images\JonnyDepp.jpg" />
     <None Remove="images\scarlettJohanson.jpg" />
     <None Remove="images\TimotheeChalomet.jpg" />
@@ -27,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="images\error.jpg" />
     <Resource Include="images\JonnyDepp.jpg" />
     <Resource Include="images\scarlettJohanson.jpg" />
     <Resource Include="images\TimotheeChalomet.jpg" />

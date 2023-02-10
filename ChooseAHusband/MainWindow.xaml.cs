@@ -22,68 +22,96 @@ namespace ChooseAHusband
     public partial class MainWindow : Window
     {
 
-        List<string?> images = new List<string?>();
-
         //storing NOT picked images (the opposit of clicked on)
         List<string?> notPickedImages = new List<string?>();
 
         int CharactersLeft;
 
         List<string?> allCelebs = new List<string?>();
-
+ 
 
         public MainWindow()
         {
             InitializeComponent();
-
-            //thinking of making a dictionary for now (then a db) name + photo
-            //images.Add("Sebastian Stan");
-            //images.Add("Brad Pitt");
-            //images.Add("Timothee Chalomet");
-            //images.Add("Robert Dawny");
-            //images.Add("Scarlett Johanson");
-            //images.Add("Prianka Chopra");
-            //images.Add("Me");
-            //images.Add("Grinch"); 
-            //images.Add("Jongook");
-
-
+             
 
             using (PickAtypeDbContext db = new PickAtypeDbContext())
             {
-                 
+                  
+
                 allCelebs = db.CelebsInfos.Select(b => b.CelebName).Distinct().ToList();
 
-              //  images = db.CelebsInfos.Select(b => b.Photo).Distinct().ToList();
+                //// initializing at first loading of the app with the first elements
+                TextBlock_1.Text = allCelebs[0].ToString();
+                TextBlock_2.Text = allCelebs[1].ToString();
 
-                // initializing at first loading of the app with the first elements
-                TextBlock_1.Text = allCelebs[0];
-                TextBlock_2.Text = allCelebs[1];
-                 
+                
+                Celeb_Image_1.Source = ImageSource(db.CelebsInfos.Where(a => a.CelebName == TextBlock_1.Text).Select(b => b.Photo).FirstOrDefault().ToString()); 
+                Celeb_Image_2.Source = ImageSource(db.CelebsInfos.Where(a => a.CelebName == TextBlock_2.Text).Select(b => b.Photo).FirstOrDefault().ToString());  //
+
             }
 
-            
              
         }
 
+        private BitmapImage ImageSource (string s)
+        { 
+           
+                BitmapImage myBitmapImage = new BitmapImage();
+                // BitmapImage.UriSource must be in a BeginInit/EndInit block
+                myBitmapImage.BeginInit();
+
+                try
+                {
+                    myBitmapImage.UriSource = new Uri(s);
+                }
+                catch
+                {
+                    myBitmapImage.UriSource = new Uri("C:\\Users\\123\\source\\repos\\ChooseAHusband\\ChooseAHusband\\images\\error.jpg");
+                }
+
+                myBitmapImage.DecodePixelWidth = 200;
+                myBitmapImage.EndInit();
+
+                return myBitmapImage;
+             
+           
+        }
+
         private void Button_1_Click(object sender, RoutedEventArgs e)
-        {  
+        {
 
             string newOppositeString = RandomImageChooser(TextBlock_1.Text, TextBlock_2.Text);
 
-            if (newOppositeString != "0") TextBlock_2.Text = newOppositeString;
+            if (newOppositeString != "0")
+            {
+                TextBlock_2.Text = newOppositeString;
 
-             
+                using (PickAtypeDbContext db = new PickAtypeDbContext())
+                {
+
+                    Celeb_Image_2.Source = ImageSource(db.CelebsInfos.Where(a => a.CelebName == TextBlock_2.Text).Select(b => b.Photo).FirstOrDefault().ToString());
+                }
+            }
         }
 
         private void Button_2_Click(object sender, RoutedEventArgs e)
         {
-  
+                                                    
             string newOppositeString = RandomImageChooser(TextBlock_2.Text, TextBlock_1.Text);
 
-            if (newOppositeString != "0") TextBlock_1.Text = newOppositeString;
+            if (newOppositeString != "0")
+            {
+                TextBlock_1.Text = newOppositeString;
 
-            
+
+                using (PickAtypeDbContext db = new PickAtypeDbContext())
+                {
+
+                    Celeb_Image_1.Source = ImageSource(db.CelebsInfos.Where(a => a.CelebName == TextBlock_1.Text).Select(b => b.Photo).FirstOrDefault().ToString());
+                }
+
+            }
         }
 
 
@@ -109,7 +137,17 @@ namespace ChooseAHusband
                 //back to basics as we`ve made the last choice
                 TextBlock_1.Text = allCelebs[0];
                 TextBlock_2.Text = allCelebs[1];
-                notPickedImages.Clear();
+
+                using (PickAtypeDbContext db = new PickAtypeDbContext())
+                {
+                    Celeb_Image_1.Source = ImageSource(db.CelebsInfos.Where(a => a.CelebName == TextBlock_1.Text).Select(b => b.Photo).FirstOrDefault().ToString());
+                    Celeb_Image_2.Source = ImageSource(db.CelebsInfos.Where(a => a.CelebName == TextBlock_2.Text).Select(b => b.Photo).FirstOrDefault().ToString());
+                }
+                    notPickedImages.Clear();
+                CharactersLeft = allCelebs.Count() - notPickedImages.Count();
+
+                ImagesLeft_TextBlock.Text = CharactersLeft.ToString();
+
 
                 return "0";
             }
