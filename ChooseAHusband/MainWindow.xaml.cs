@@ -32,8 +32,19 @@ namespace ChooseAHusband
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new AddCelebPage());
+            MainFrame.Navigate(new AddCelebPage(this));
 
+            BackToMainButton.Visibility = Visibility.Visible;
+            AddButton.Visibility = Visibility.Hidden;
+        }
+         
+
+        private void BackToMainButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new MainPage());
+
+            BackToMainButton.Visibility = Visibility.Hidden;
+            AddButton.Visibility = Visibility.Visible;
         }
     }
 

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\App.xaml
-2408349239
+3-683808299
 
-7-1118645737
+81837463583
 222499858097
-MainWindow.xaml;pages\MainPage.xaml;
+MainWindow.xaml;pages\AddCelebPage.xaml;pages\MainPage.xaml;
 
 False
 

@@ -8,7 +8,155 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddCelebPage">
 
-    <Grid>
+    <Grid x:Name="MainGrid">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            
+        </Grid.RowDefinitions>
         
+        <TextBlock Grid.Row="0"
+                   Height="30"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10"
+                   Text="Name"/>
+        <TextBox Grid.Row="0"
+                 Height="30"
+                 Width="250"
+                 Name="NameTextBox"
+                 HorizontalAlignment="Right"
+                 />
+
+
+
+        <TextBlock Grid.Row="1"
+                   Height="30"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10"
+                   Text="Age"/>
+        <TextBox Grid.Row="1"
+                 Height="30"
+                 Width="250"
+                 Name="AgeTextBox"
+                 HorizontalAlignment="Right"
+                 />
+
+
+        <TextBlock Grid.Row="2"
+                   Height="30"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10"
+                   Text="Height"/>
+        <TextBox Grid.Row="2"
+                 Height="30"
+                 Width="250"
+                 Name="HeightTextBox"
+                 HorizontalAlignment="Right"
+                 />
+
+
+
+        <TextBlock Grid.Row="3"
+                   Height="30"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10"
+                   Text="Weight"/>
+        <TextBox Grid.Row="3"
+                 Height="30"
+                 Width="250"
+                 Name="WeightTextBox"
+                 HorizontalAlignment="Right"
+                 />
+
+
+
+
+
+<!--         1 Column            -->
+        
+        
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   Height="30"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10"
+                   Text="Description"/>
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Height="30"
+                 Width="250"
+                 Name="DescriptionTextBox"
+                 HorizontalAlignment="Right"
+                 />
+
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   Height="30"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10"
+                   Text="Meaning"/>
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Height="30"
+                 Width="250"
+                 Name="MeaningTextBox"
+                 HorizontalAlignment="Right"
+                 />
+
+
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Height="30"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   FontSize="20"
+                   Margin="10"
+                   Text="Photo"/>
+        <Button x:Name="OpenFileDialog"
+                Grid.Column="1"
+                Grid.Row="2"
+                Height="30"
+                Width="100"
+                Click="OpenFileDialog_Click"
+                Content="Choose a pic"/>
+        <Image x:Name="CelebImage"
+               Height="100"
+               Width="100"
+               Grid.Column="1"
+                Grid.Row="2"
+               HorizontalAlignment="Right"
+               />
+
+
+        <Button Grid.Column="1"
+                Grid.Row="3"
+                Height="30"
+                Width="100"
+                Name="SaveButton"
+                Click="SaveButton_Click"
+                Content="Save"/>
     </Grid>
 </Page>
