@@ -6,63 +6,18 @@
         xmlns:local="clr-namespace:ChooseAHusband"
         mc:Ignorable="d"
         Title="Choose your type" Height="450" Width="800">
-   
-    
-    <Grid Name="MainGrid">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <Button Name="Button_1"
-                Click="Button_1_Click"
-                Grid.Column="0"
-                Height="300"
-                Width="300">
 
 
-            <Image x:Name="Celeb_Image_1"
-                   />
-            
-        </Button>
-
-        <TextBlock x:Name="TextBlock_1"
-                         Width="200"
-                       Height="30"
-                    Grid.Column="0"/>
-
-        
-        
-        
-        <Button Name="Button_2"
-                Click="Button_2_Click"
-                Grid.Column="1"
-                Height="300"
-                Width="300">
-
-
-            <Image x:Name="Celeb_Image_2"
-                   />
-            
-            
-        </Button>
- 
-
-        <TextBlock x:Name="TextBlock_2"
-                         Width="200"
-                       Height="30"
-                    Grid.Column="1"/>
-        
-        
-        
-
-
-        <TextBlock Name="ImagesLeft_TextBlock"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Top"
-                   Height="40"
-                   Width="100"
-                   Grid.Column="1"/>
-        
+    <Grid>
+        <Frame x:Name="MainFrame"
+                Height="370"
+               VerticalAlignment="Top"/>
+        <Button x:Name="AddButton"
+                Content="Add Celeb"
+                Height="30"
+                Width="100"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="10"/>
     </Grid>
 </Window>

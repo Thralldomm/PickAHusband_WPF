@@ -64,3 +64,5 @@ C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\bin\Debug\net6.0-windows
 C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows\ChooseAHusband.csproj.CopyComplete
+C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows\pages\MainPage.g.cs
+C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows\pages\MainPage.baml
