@@ -54,35 +54,48 @@ namespace ChooseAHusband.pages
             {
                 using (PickAtypeDbContext db = new PickAtypeDbContext())
                 {
+                    string s = null;
+                    s = db.CelebsInfos.Where(a => a.CelebName == NameTextBox.Text).FirstOrDefault().ToString();
 
-                    celeb.CelebName = NameTextBox.Text;
-                    celeb.CelebAge = Int32.Parse(AgeTextBox.Text);
-                    celeb.CelebHeight = HeightTextBox.Text;
-                    celeb.CelebWeight = WeightTextBox.Text;
-                    celeb.CelebDescription = DescriptionTextBox.Text;
-                    celeb.CelebMeaningOfChoice = MeaningTextBox.Text;
-                    celeb.Photo = CelebImage.Source.ToString();
-
-                    int latestkod = db.CelebsInfos.OrderByDescending(b => b.CelebrityKod).Select(b => b.CelebrityKod).First();
-
-                    celeb.CelebrityKod = (latestkod + 1);
-
-                    
-                    try
+                    if (s != null)
                     {
-                        db.CelebsInfos.Add(celeb);
-                        db.SaveChanges();
+                        MessageBox.Show("Celeb already exists");
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show($"{ex.Message}");
+                        celeb.CelebName = NameTextBox.Text;
+                        celeb.CelebAge = Int32.Parse(AgeTextBox.Text);
+                        celeb.CelebHeight = HeightTextBox.Text;
+                        celeb.CelebWeight = WeightTextBox.Text;
+                        celeb.CelebDescription = DescriptionTextBox.Text;
+                        celeb.CelebMeaningOfChoice = MeaningTextBox.Text;
+                        celeb.Photo = CelebImage.Source.ToString();
+
+                        int latestkod = db.CelebsInfos.OrderByDescending(b => b.CelebrityKod).Select(b => b.CelebrityKod).First();
+
+                        celeb.CelebrityKod = (latestkod + 1);
+
+                         
+
+                        try
+                        {
+                            db.CelebsInfos.Add(celeb);
+                            db.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"{ex.Message}");
+                        }
+
+                        mainWindow.MainFrame.Navigate(new MainPage());
+
                     }
+
 
 
                 }
 
-                mainWindow.MainFrame.Navigate(new MainPage());
-
+                
             }
         }
 

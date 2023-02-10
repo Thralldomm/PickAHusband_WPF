@@ -68,3 +68,7 @@ C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows
 C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows\pages\MainPage.baml
 C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows\pages\AddCelebPage.g.cs
 C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows\pages\AddCelebPage.baml
+C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\bin\Debug\net6.0-windows\MaterialDesignColors.dll
+C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\123\source\repos\ChooseAHusband\ChooseAHusband\obj\Debug\net6.0-windows\App.baml

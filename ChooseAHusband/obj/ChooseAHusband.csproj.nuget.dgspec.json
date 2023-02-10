@@ -44,6 +44,14 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "MaterialDesignColors": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.7.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.2, )"
